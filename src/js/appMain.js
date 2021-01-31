@@ -1,4 +1,4 @@
-import events from './common/eventListener';
+import { events } from './common/eventListener';
 import { globalEvents } from './constants';
 import { loadItems } from './loadItems';
 import { updateOrderSummary, updateItems } from './actions';

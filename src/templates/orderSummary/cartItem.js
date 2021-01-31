@@ -1,4 +1,4 @@
-import { formatter,addItem,removeItem } from '../../js';
+import { formatter,addItem,removeItem,toastMessage } from '../../js';
 
 const imageItemTile = function (item = {}) {
     const {
@@ -30,12 +30,12 @@ const itemQuantitySec = function(item={}) {
   itemContainer.className='cart-item-quantity';
   const removeItemBtn = document.createElement('button');
   removeItemBtn.innerText='-';
-  removeItemBtn.addEventListener('click',() => removeItem(item.itemId,item.itemDetails));
+  removeItemBtn.addEventListener('click',() => removeItem(item.itemId,item.itemDetails,'changeQuantity'));
   const itemQuantityInput = document.createElement('input');
   itemQuantityInput.value=quantity;
   const addItemBtn = document.createElement('button');
   addItemBtn.innerText='+';
-  addItemBtn.addEventListener('click',() => addItem(item.itemId,item.itemDetails));
+  addItemBtn.addEventListener('click',() => addItem(item.itemId,item.itemDetails,'changeQuantity'));
   itemContainer.appendChild(removeItemBtn);
   itemContainer.appendChild(itemQuantityInput);
   itemContainer.appendChild(addItemBtn);

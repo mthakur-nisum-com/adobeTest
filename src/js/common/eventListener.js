@@ -1,4 +1,4 @@
-export default () => (function(){
+export const events = () => (function(){
     var topics = {};
     var hOP = topics.hasOwnProperty;
   

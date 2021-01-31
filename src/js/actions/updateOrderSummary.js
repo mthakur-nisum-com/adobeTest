@@ -12,7 +12,7 @@ export const updateOrderSummary = (items = [],elem) => {
     const rootElem = document.querySelectorAll(elem);
     if (items.length) {
         items.forEach((item) => {
-            carItem.call(itemListFragment, item);
+            carItem.call(itemListFragment, item,items);
         });
         cartItemList.replaceChildren(itemListFragment);
         element[0].appendChild(cartItemList);

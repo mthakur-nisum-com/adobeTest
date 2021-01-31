@@ -1,7 +1,10 @@
 
-import { formatter, addItem } from '../../js';
+import { formatter, addItem,toastMessage} from '../../js';
 
 
+const addItemCart =(...params) => {
+    addItem(...params,'addToCart');
+}
 const imageSection = function (item = {}) {
     const {
         name = '',
@@ -56,7 +59,7 @@ const itemPriceDetails = function (item = {}, idx) {
     addToCartBtn.type = 'button';
     addToCartBtn.className = 'add-item-cart-btn right';
     addToCartBtn.innerText = 'Add to Cart';
-    addToCartBtn.addEventListener('click', () => addItem(idx, item));
+    addToCartBtn.addEventListener('click', () => addItemCart(idx, item));
     priceContainer.appendChild(addToCartBtn);
     this.appendChild(priceContainer);
 }

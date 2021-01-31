@@ -17,7 +17,7 @@ const itemTotalElem = function (itemList = []) {
        const {
            actual=0,display=0
        }= price;
-       amount+=(quantity*display);
+       amount+=(quantity*actual);
     })
     itemAmount.innerText = `${formatter.format(amount)}`
     itemTotalCotainer.appendChild(itemsText);
@@ -43,7 +43,8 @@ const calculateItemDiscount = function(itemList=[]) {
             actual=0,
             display=0
         }=price;
-        amount+=(actual*quantity);
+        const discountPrice= display-actual;
+        amount+=(quantity*discountPrice);
     });
     itemDiscount.innerText=`-${formatter.format(amount)}`;
     discountContainer.appendChild(itemsDiscountText);
